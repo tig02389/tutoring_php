@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var getCookie = function(name) {
+            var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+            return value? value[2] : null;
+        };
+
+        function getandreturn(value){
+            return value;
+        };
+        document.cookie = "test=ths is cookie!";
+        
+function pageload(){
+    var targetname = document.createElement("div");
+    targetname.setAttribute('id','anoname');
+    targetname.setAttribute('style','text-align:left; background-color:cyan');
+    var dumpck=getCookie('test');
+    var mtest = document.createElement("div");
+    mtest.setAttribute('style','text-align:left; background-color:yellow');    
+
+    document.write("a");
+    targetname.innerHTML = getCookie('test');
+    parent.testform.appendChild(targetname);
+    // window.location.reload();
+}
+window.onload=pageload();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
